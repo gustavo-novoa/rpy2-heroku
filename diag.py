@@ -67,9 +67,9 @@ class DiagResource(object):
 
             r_f = robjects.r['f']
             out = r_f(cap_id, py_exact_var, py_exact_val, py_session)
-            resp.body = 'Treatment=' + str(out[0])
+            resp.body = str(out[0])
         else:
-            resp.body = 'Treatment=' + "error: isolationism=" + req.params["isolationism"]
+            resp.body = 'treatment=' + "error: isolationism=" + req.params["isolationism"]
         
 # falcon.API instances are callable WSGI apps
 app = falcon.API()
