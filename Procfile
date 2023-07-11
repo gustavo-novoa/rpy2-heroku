@@ -1,1 +1,1 @@
-web: gunicorn diag:app --log-file -
+web:gunicorn diag:app --log-file -
