@@ -52,7 +52,10 @@ class DiagResource(object):
                                                 , id.vals = id
                                                 , n.tr = 5
                                                 , tr.names = c("control", "0shaming", "0silence", "1shaming", "2shaming")
-                                                , assg.prob = c(1/5, 1/5, 1/5, 1/5, 1/5)
+                                                #, assg.prob = c(1/5, 1/5, 1/5, 1/5, 1/5)
+                                                , assg.prob.method = "ktimes"
+                                                , assg.prob.kfac = 2
+                                                , distance = "mahalanobis"
                                                 , exact.vals = exact_va
                                                 , seed = 19930531
                                                 , file.name = session)
