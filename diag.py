@@ -28,7 +28,7 @@ class DiagResource(object):
         py_exact_var = ["isolationism"]
         py_exact_val = [cap_iso]
         
-        if (len(req.params["isolationism"]) == 1):
+        if (len(req.params["isolationism"]) != 0):
             robjects.r('''
                            f <- function(id, exact_var, exact_val, session) {
                             
