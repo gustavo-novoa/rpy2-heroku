@@ -56,6 +56,7 @@ class DiagResource(object):
                                                 #, assg.prob.method = "ktimes"
                                                 #, assg.prob.kfac = 2
                                                 #, distance = "mahalanobis"
+                                                , exact.vars = exact_var
                                                 , exact.vals = exact_val
                                                 , seed = 19930531
                                                 , file.name = session)
