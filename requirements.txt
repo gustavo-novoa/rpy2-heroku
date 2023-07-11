@@ -6,4 +6,4 @@ python-mimeparse==1.6.0
 rpy2==3.0.5
 singledispatch==3.4.0.3
 six==1.11.0
-pandas==0.23.0
+pandas==2.0.3
