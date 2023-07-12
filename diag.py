@@ -15,7 +15,7 @@ bt = rpackages.importr('blockTools')
 # Falcon follows the REST architectural style, meaning (among
 # other things) that you think in terms of resources and state
 # transitions, which map to HTTP verbs.
-class DiagResource(object):
+class Resource(object):
     def on_get(self, req, resp):
         """Handles GET requests"""
         resp.status = falcon.HTTP_200  # This is the default status
@@ -29,7 +29,8 @@ class DiagResource(object):
         py_exact_val = [cap_iso]
         
         if (len(req.params["isolationism"]) != 0):
-            robjects.r('''
+            try:
+                robjects.r('''
                            f <- function(id, exact_var, exact_val, session) {
                             
                             # the session has not been seen before, then the corresponding file doesn't exist
@@ -65,13 +66,17 @@ class DiagResource(object):
                             }
                            ''')
 
-            r_f = robjects.r['f']
-            out = r_f(cap_id, py_exact_var, py_exact_val, py_session)
-            resp.text = str(out[0])
+                r_f = robjects.r['f']
+                out = r_f(cap_id, py_exact_var, py_exact_val, py_session)
+                resp.text = str(out[0])
+            except IOError:
+                raise falcon.HTTPNotFound()
         else:
-            resp.text = "error: isolationism=" + req.params["isolationism"]
-        
+            try:
+                resp.text = "error: isolationism=" + req.params["isolationism"]
+            except IOError:
+                raise falcon.HTTPNotFound()
 # falcon.API instances are callable WSGI apps
 app = falcon.API()
 
-app.add_route('/test', DiagResource())
+app.add_route('/test', Resource())
