@@ -73,7 +73,7 @@ class Resource(object):
                 raise falcon.HTTPNotFound()
         else:
             try:
-                resp.text = "TrAssg=error: isolationism=" + req.params["isolationism"]
+                resp.text = "TrAssg=error"
             except IOError:
                 raise falcon.HTTPNotFound()
 # falcon.API instances are callable WSGI apps
