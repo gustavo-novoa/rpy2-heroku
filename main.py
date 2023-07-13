@@ -68,7 +68,7 @@ class Resource(object):
 
                 r_f = robjects.r['f']
                 out = r_f(cap_id, py_exact_var, py_exact_val, py_session)
-                resp.text = str(out[0])
+                resp.text = "treatment=" + str(out[0])
             except IOError:
                 raise falcon.HTTPNotFound()
         else:
