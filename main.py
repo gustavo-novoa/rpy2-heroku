@@ -42,6 +42,9 @@ class Resource(object):
                                                 , n.tr = 5
                                                 , tr.names = c("control", "0shaming", "0silence", "1shaming", "2shaming") 
                                                 , assg.prob = c(1/5, 1/5, 1/5, 1/5, 1/5)
+                                                , assg.prob.stat = "trimmean"
+                                                , trim = 0.01
+                                                , assg.prob.method = "ktimes"
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
                                                 , seed = 815
@@ -55,9 +58,9 @@ class Resource(object):
                                                 , n.tr = 5
                                                 , tr.names = c("control", "0shaming", "0silence", "1shaming", "2shaming")
                                                 , assg.prob = c(1/5, 1/5, 1/5, 1/5, 1/5)
-                                                #, assg.prob.method = "ktimes"
-                                                #, assg.prob.kfac = 2
-                                                #, distance = "mahalanobis"
+                                                , assg.prob.stat = "trimmean"
+                                                , trim = 0.01
+                                                , assg.prob.method = "ktimes"
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
                                                 , seed = 815
