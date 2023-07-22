@@ -44,7 +44,8 @@ class Resource(object):
                                                 , assg.prob = c(1/5, 1/5, 1/5, 1/5, 1/5)
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
-                                                , seed = 19930531
+                                                , seed = 815
+                                                , seed.dist = 19930531
                                                 , file.name = session)
                             }
                             else {
@@ -59,7 +60,8 @@ class Resource(object):
                                                 #, distance = "mahalanobis"
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
-                                                , seed = 19930531
+                                                , seed = 815
+                                                , seed.dist = 19930531
                                                 , file.name = session)
                             }
                             seqout$x[seqout$x['ID'] == id , "Tr"]
