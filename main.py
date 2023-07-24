@@ -22,7 +22,7 @@ class Resource(object):
         
         # capture each of the blocking vars
         cap_iso = req.params["isolationism"]
-        cap_id = req.params["qualtricsid"]
+        cap_id = req.params["id"]
         py_session = req.params["session"] + ".RData"
         
         py_exact_var = ["isolationism"]
