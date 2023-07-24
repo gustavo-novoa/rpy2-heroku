@@ -67,7 +67,7 @@ class Resource(object):
                                                 , seed.dist = 19930531
                                                 , file.name = session)
                             }
-                            seqout$x[seqout$x['ID'] == id , "Tr"]
+                            seqout$x[nrow(seqout$x), "Tr"]
                             }
                            ''')
 
