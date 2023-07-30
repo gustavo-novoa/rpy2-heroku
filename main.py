@@ -22,11 +22,13 @@ class Resource(object):
         
         # capture each of the blocking vars
         cap_iso = req.params["isolationism"]
+        cap_mi = req.params["mi"]
+        cap_ci = req.params["ci"]
         cap_id = req.params["id"]
         py_session = req.params["session"] + ".RData"
         
-        py_exact_var = ["isolationism"]
-        py_exact_val = [cap_iso]
+        py_exact_var = ["isolationism", "mi", "ci"]
+        py_exact_val = [cap_iso, cap_mi, cap_ci]
         
         if (len(req.params["isolationism"]) != 0):
             try:
