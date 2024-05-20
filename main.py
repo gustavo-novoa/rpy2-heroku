@@ -21,14 +21,14 @@ class Resource(object):
         resp.status = falcon.HTTP_200  # This is the default status
         
         # capture each of the blocking vars
-        cap_iso = req.params["isolationism"]
+        cap_iso = req.params["intl"]
         cap_id = req.params["id"]
         py_session = req.params["session"] + ".RData"
         
-        py_exact_var = ["isolationism"]
+        py_exact_var = ["intl"]
         py_exact_val = [cap_iso]
         
-        if (len(req.params["isolationism"]) != 0):
+        if (len(req.params["intl"]) != 0):
             try:
                 robjects.r('''
                            f <- function(id, exact_var, exact_val, session) {
