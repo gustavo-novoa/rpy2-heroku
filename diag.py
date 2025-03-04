@@ -46,8 +46,8 @@ class DiagResource(object):
                                             , id.vars = "ID"
                                             , id.vals = id
                                             , n.tr = 2
-                                            , tr.names = c("nonprofit", "for-profit")
-                                            , assg.prob = c(1/2, 1/2)
+                                            , tr.names = c("nonprofit", "for-profit", "government")
+                                            , assg.prob = c(1/3, 1/3, 1/3)
                                             , exact.vars = exact_var
                                             , exact.vals = exact_val
                                             , covar.vars = covar_var
@@ -58,9 +58,9 @@ class DiagResource(object):
                             seqout <- seqblock(query = FALSE
                                             , object = session
                                             , id.vals = id
-                                            , n.tr = 2
-                                            , tr.names = c("nonprofit", "for-profit")
-                                            , assg.prob = c(1/2, 1/2)
+                                            , n.tr = 3
+                                            , tr.names = c("nonprofit", "for-profit", "government")
+                                            , assg.prob = c(1/3, 1/3, 1/3)
                                             , exact.vals = exact_val
                                             , covar.vals = covar_val
                                             , file.name = session)
